@@ -22,7 +22,8 @@ jobs:
           docker build -t saas-app:${{ github.sha }} ./app
 
       - name: Run Trivy vulnerability scan
-        uses: aquasecurity/trivy-action@0.20.0
+        #uses: aquasecurity/trivy-action@0.20.0
+        uses: aquasecurity/trivy-action@v0.28.0
         with:
           image-ref: saas-app:${{ github.sha }}
           severity: CRITICAL,HIGH

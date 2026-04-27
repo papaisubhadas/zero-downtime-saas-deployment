@@ -45,8 +45,8 @@ docker run -d -p ${NEW_PORT}:80 --name ${NEW_ENV}-app saas-app:latest
 # Wait before health check
 sleep 5
 
-# 🔴 TEMP: Force failure for rollback testing
-if curl -f http://localhost:${NEW_PORT}/fail; then
+# 🔴 TEMP: Force failure for rollback testing (http://localhost:${NEW_PORT}/fail  use this)
+if curl -f http://localhost:${NEW_PORT}; then
     echo "Health check passed" >> $LOG_FILE
 
     # Switch traffic
